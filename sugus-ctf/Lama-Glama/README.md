@@ -41,7 +41,7 @@ Observamos en la salida dos campos bastante interesantes:
 Empezando por el campo passwors, se ve que el formato podría estar codificado
 mediante base64, por tanto decodificamos con:
 
-    echo SGFrdW5hTWF0YXRh | base64 --decode
+> 'echo SGFrdW5hTWF0YXRh | base64 --decode'
 
 Produce como salida:
 
