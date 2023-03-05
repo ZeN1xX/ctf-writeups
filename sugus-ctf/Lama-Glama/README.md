@@ -20,13 +20,13 @@ Primero, vamos a imprimir las seuencias de caracteres imprimibles del fichero.
 
 Para ellos vamo a ayudarnos del comando strings, de la siguiente forma:
 
-~~~
-$ strings Josefina.jpg
+>~~~
+>$ strings Josefina.jpg
+>...
 ...
-...
-**Password: SGFrdW5hTWF0YXRh==**
+Password: SGFrdW5hTWF0YXRh==
 ctfsugus/UT
-**ctfsugus/flag.txtUT**
+ctfsugus/flag.txtUT
 GZ/MyM
 f8C~
 ctfsugus/UT
@@ -66,6 +66,10 @@ archivos, para ello:
 En la salida [Figura 2.1] observamos que los ficheros que se encuentran dentro de
 [Josefina.jpg](https://github.com/ZeN1xX/ctf-writeups/blob/main/sugus-ctf/Lama-Glama/Josefina.jpg)
 son simplemente archivos comprimidos ZIP.
+
+~~~
+
+~~~
 
 ![Figura 2.1](https://user-images.githubusercontent.com/114481026/222983443-a3955532-a07d-4f63-82de-077136d0673c.png "Figura 2.1")
 
