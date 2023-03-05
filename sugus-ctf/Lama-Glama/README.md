@@ -22,3 +22,39 @@ Para ellos vamo a ayudarnos del comando strings, de la siguiente forma:
 
     strings Josefina.jpg
 
+Observamos en la salida [Figura 1.1] dos campos muy importantes:
+
+- Password: SGFrdW5hTWF0YXRh==
+- ctf\_sugus/flag.txt
+
+![Figura 1.1](https://user-images.githubusercontent.com/114481026/222982767-94100fd9-705e-4da3-9d09-5bb2b916e34b.png)
+)
+
+Empezando por el campo passwors, se ve que el formato podría estar codificado
+mediante base64, por tanto decodificamos con:
+
+    echo SGFrdW5hTWF0YXRh | base64 --decode
+
+Produce como salida:
+
+> HakunaMatata
+
+Otra opción prodría haber sido utilizar la herramienta online [CyberChef](https://gchq.github.io/CyberChef/)
+para decodificar el password mencionado anteriormente.
+
+Continuando con la salida del comando strings, observamos que hay un fichero
+flag.txt dentro de la imagen, por tanto con la herramienta *binwalk* vamos a
+averiguar de que se trata.
+
+Esta herramienta puede instalarse mediante:
+
+    sudo apt-get install binwalk
+
+Esta herramienta permite buscar archivos y código ejecutable dentro de otros
+archivos, para ello:
+
+    binwalk Josefina.jpg
+
+En la salida [Figura 2.1] observamos
+
+![Figura 2.1](https://user-images.githubusercontent.com/114481026/222983443-a3955532-a07d-4f63-82de-077136d0673c.png)
