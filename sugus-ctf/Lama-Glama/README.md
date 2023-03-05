@@ -61,7 +61,7 @@ Esta herramienta puede instalarse mediante:
 Binwalk permite buscar archivos y código ejecutable dentro de otros
 archivos, para ello:
 
->~~~     
+>~~~
 >$ binwalk Josefina.jpg
 >DECIMAL       HEXADECIMAL     DESCRIPTION
 >--------------------------------------------------------------------------------
@@ -71,17 +71,51 @@ archivos, para ello:
 >78908         0x1343C         End of Zip archive, footer length: 22
 >~~~
 
-En la salida [Figura 2.1] observamos que los ficheros que se encuentran dentro de
+En la salida observamos que los ficheros que se encuentran dentro de
 [Josefina.jpg](https://github.com/ZeN1xX/ctf-writeups/blob/main/sugus-ctf/Lama-Glama/Josefina.jpg)
 son simplemente archivos comprimidos ZIP.
 
-~~~
+Para proceder a la estracción del fichero:
 
-~~~
+>~~~
+>$ unzip Josefina.jpg
+>Archive:  Josefina.jpg
+>warning [Josefina.jpg]:  78465 extra bytes at beginning or within zipfile
+>  (attempting to process anyway)
+>   creating: ctfsugus/
+>[Josefina.jpg] ctfsugus/flag.txt password: HakunaMatata
+> extracting: ctfsugus/flag.txt
+>~~~
 
-![Figura 2.1](https://user-images.githubusercontent.com/114481026/222983443-a3955532-a07d-4f63-82de-077136d0673c.png "Figura 2.1")
+Como se puede observar, nos ha exigido una contraseña para poder extraer el
+fichero ZIP, para ello hemos utilizado la contraseña que decodificamos
+anteriormente, ***HakunaMatata***
 
-Para proceder a la estracción del fichero, habría dos opciones:
+Esto ha producido un nuevo directorio *ctfsugus*, con un fcihero dentro, *flag.txt*
 
-- Opción 1:
-	
+Accedemos a dicho fichero mediante:
+
+>~~~
+>$ cat ctfsugus/flag.txt
+>Aquí tienes tu flag:
+>Q0VRRUN7RHIwYzNfZ1IwX01rWF8xd0s2c1hvX2tYaTdyMXg2X21LeF9tQjNrRDNfZHIzXzF3ejBjQ3NsVjN9
+>~~~
+
+Como se puede ver, de nuevo la flag se encuentra codificada en base64. Vamos a decodificarla
+como hemos hecho anteriormente.
+
+>     $ echo Q0VRRUN7RHIwYzNfZ1IwX01rWF8xd0s2c1hvX2tYaTdyMXg2X21LeF9tQjNrRDNfZHIzXzF3ejBjQ3NsVjN9 | base64 --decode
+
+Su salida seria:
+
+> CEQEC{Dr0c3_gR0_MkX_1wK6sXo_kXi7r1x6_mKx_mB3kD3_dr3_1wz0cCslV3}
+
+Observamos que el formato es como debería ser la flag, pero con los caracteres rotados.
+Utilizando la herramienta [CyberChef](https://gchq.github.io/CyberChef/) 
+procedemos a descifrar la flag.
+
+Concretamente con la opción ROT13 Brute Force de [CyberChef](https://gchq.github.io/CyberChef/)
+nos devuelve todas las combinaciones posibles de rotación de caracteres, y, rotando exactamente 16
+veces los caracteres obtenemos el formato de la flag correcto.
+
+> ***SUGUS{Th0s3_wH0_CaN_1mA6iNe_aNy7h1n6_cAn_cR3aT3_th3_1mp0sSibL3}***
