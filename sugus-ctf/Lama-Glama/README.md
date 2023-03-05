@@ -16,7 +16,7 @@
 
 ## Solución
 
-Primero, vamos a imprimir las seuencias de caracteres imprimibles del fichero.
+Primero, vamos a imprimir las secuencias de caracteres imprimibles del fichero.
 
 Para ellos vamo a ayudarnos del comando strings, de la siguiente forma:
 
@@ -38,7 +38,7 @@ Observamos en la salida dos campos bastante interesantes:
 - Password: SGFrdW5hTWF0YXRh==
 - ctf\_sugus/flag.txt
 
-Empezando por el campo passwors, se ve que el formato podría estar codificado
+Empezando por el campo password, se ve que el formato podría estar codificado
 mediante base64, por tanto decodificamos con:
 
 >     $ echo SGFrdW5hTWF0YXRh | base64 --decode
@@ -101,21 +101,21 @@ Accedemos a dicho fichero mediante:
 >Q0VRRUN7RHIwYzNfZ1IwX01rWF8xd0s2c1hvX2tYaTdyMXg2X21LeF9tQjNrRDNfZHIzXzF3ejBjQ3NsVjN9
 >~~~
 
-Como se puede ver, de nuevo la flag se encuentra codificada en base64. Vamos a decodificarla
-como hemos hecho anteriormente.
+Se puede ver que de nuevo la flag se encuentra codificada en base64. Para decodificarla
+simplemente como hemos hecho anteriormente.
 
 >     $ echo Q0VRRUN7RHIwYzNfZ1IwX01rWF8xd0s2c1hvX2tYaTdyMXg2X21LeF9tQjNrRDNfZHIzXzF3ejBjQ3NsVjN9 | base64 --decode
 
-Su salida seria:
+Su salida sería:
 
 > CEQEC{Dr0c3_gR0_MkX_1wK6sXo_kXi7r1x6_mKx_mB3kD3_dr3_1wz0cCslV3}
 
 Observamos que el formato es como debería ser la flag, pero con los caracteres rotados.
-Utilizando la herramienta [CyberChef](https://gchq.github.io/CyberChef/) 
+Utilizando la herramienta [CyberChef](https://gchq.github.io/CyberChef/)
 procedemos a descifrar la flag.
 
 Concretamente con la opción ROT13 Brute Force de [CyberChef](https://gchq.github.io/CyberChef/)
-nos devuelve todas las combinaciones posibles de rotación de caracteres, y, rotando exactamente 16
-veces los caracteres obtenemos el formato de la flag correcto.
+nos devuelve todas las combinaciones posibles de rotación de caracteres, y,
+rotando exactamente 16 veces los caracteres obtenemos el formato de la flag correcto.
 
 > ***SUGUS{Th0s3_wH0_CaN_1mA6iNe_aNy7h1n6_cAn_cR3aT3_th3_1mp0sSibL3}***
