@@ -20,23 +20,23 @@ Primero, vamos a imprimir las seuencias de caracteres imprimibles del fichero.
 
 Para ellos vamo a ayudarnos del comando strings, de la siguiente forma:
 
->$ strings Josefina.jpg
->...
->...
->Password: SGFrdW5hTWF0YXRh==
->ctfsugus/UT
->ctfsugus/flag.txtUT
->GZ/MyM
->f8C~
->ctfsugus/UT
->ctfsugus/flag.txtUT
+~~~
+$ strings Josefina.jpg
+...
+...
+**Password: SGFrdW5hTWF0YXRh==**
+ctfsugus/UT
+**ctfsugus/flag.txtUT**
+GZ/MyM
+f8C~
+ctfsugus/UT
+ctfsugus/flag.txtUT
+~~~
 
-Observamos en la salida [Figura 1.1] dos campos muy importantes:
+Observamos en la salida dos campos bastante interesantes:
 
 - Password: SGFrdW5hTWF0YXRh==
 - ctf\_sugus/flag.txt
-
-![Figura 1.1](https://user-images.githubusercontent.com/114481026/222982767-94100fd9-705e-4da3-9d09-5bb2b916e34b.png "Figura 1.1")
 
 Empezando por el campo passwors, se ve que el formato podría estar codificado
 mediante base64, por tanto decodificamos con:
