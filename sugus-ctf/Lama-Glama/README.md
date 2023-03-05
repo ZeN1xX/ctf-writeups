@@ -20,19 +20,16 @@ Primero, vamos a imprimir las seuencias de caracteres imprimibles del fichero.
 
 Para ellos vamo a ayudarnos del comando strings, de la siguiente forma:
 
-~~~
-	$ strings Josefina.jpg
-...
-...
-https://blogs.mtdv.me/ctfsugus2023
-Password: SGFrdW5hTWF0YXRh==
-ctfsugus/UT
-ctfsugus/flag.txtUT
-GZ/MyM
-f8C~
-ctfsugus/UT
-ctfsugus/flag.txtUT
-~~~
+>$ strings Josefina.jpg
+>...
+>...
+>Password: SGFrdW5hTWF0YXRh==
+>ctfsugus/UT
+>ctfsugus/flag.txtUT
+>GZ/MyM
+>f8C~
+>ctfsugus/UT
+>ctfsugus/flag.txtUT
 
 Observamos en la salida [Figura 1.1] dos campos muy importantes:
 
