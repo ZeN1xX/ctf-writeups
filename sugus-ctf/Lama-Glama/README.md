@@ -41,7 +41,7 @@ Observamos en la salida dos campos bastante interesantes:
 Empezando por el campo passwors, se ve que el formato podría estar codificado
 mediante base64, por tanto decodificamos con:
 
-> 'echo SGFrdW5hTWF0YXRh | base64 --decode'
+>     $ echo SGFrdW5hTWF0YXRh | base64 --decode
 
 Produce como salida:
 
@@ -56,12 +56,20 @@ averiguar de que se trata.
 
 Esta herramienta puede instalarse mediante:
 
-    sudo apt-get install binwalk
+>     $ sudo apt-get install binwalk
 
 Binwalk permite buscar archivos y código ejecutable dentro de otros
 archivos, para ello:
 
-    binwalk Josefina.jpg
+>~~~     
+>$ binwalk Josefina.jpg
+>DECIMAL       HEXADECIMAL     DESCRIPTION
+>--------------------------------------------------------------------------------
+>0             0x0             JPEG image data, JFIF standard 1.01
+>78465         0x13281         Zip archive data, at least v1.0 to extract, name: ctfsugus/
+>78532         0x132C4         Zip archive data, encrypted at least v1.0 to extract, compressed size: 119, uncompressed size: 107, name: ctfsugus/flag.txt
+>78908         0x1343C         End of Zip archive, footer length: 22
+>~~~
 
 En la salida [Figura 2.1] observamos que los ficheros que se encuentran dentro de
 [Josefina.jpg](https://github.com/ZeN1xX/ctf-writeups/blob/main/sugus-ctf/Lama-Glama/Josefina.jpg)
