@@ -23,15 +23,15 @@ Para ellos vamo a ayudarnos del comando strings, de la siguiente forma:
 >~~~
 >$ strings Josefina.jpg
 >...
-...
-Password: SGFrdW5hTWF0YXRh==
-ctfsugus/UT
-ctfsugus/flag.txtUT
-GZ/MyM
-f8C~
-ctfsugus/UT
-ctfsugus/flag.txtUT
-~~~
+>...
+>Password: SGFrdW5hTWF0YXRh==
+>ctfsugus/UT
+>ctfsugus/flag.txtUT
+>GZ/MyM
+>f8C~
+>ctfsugus/UT
+>ctfsugus/flag.txtUT
+>~~~
 
 Observamos en la salida dos campos bastante interesantes:
 
