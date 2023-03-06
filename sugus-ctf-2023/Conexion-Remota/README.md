@@ -88,19 +88,19 @@ Para ello vamos a filtrar los paquetes mediante el filtro:
 
 >     ftp-data
 
-Con esto logramos que solo nos aparezcan los datos que han sido transmitidos mediante ***FTP***. Para extraer el ZIP que ha sido enviado, simplemente con seguir los mismo pasos que para ver la conversación ***Telnet***, Click Derecho sobre el paquete y después ***Seguir > Flujo TCP***. 
+Con esto logramos que solo nos aparezcan los datos que han sido transmitidos mediante ***FTP***. Para extraer el ZIP que ha sido enviado, simplemente con seguir los mismos pasos que para ver la conversación ***Telnet***, Click Derecho sobre el paquete y después ***Seguir > Flujo TCP***. 
 
-Ahora con los datos de la transmisión queremos tenerlos tal cual han sido enviados, sin formato, es decir en crudo. Para ello desde esta ventana en la opcion ***"Mostrar datos como"*** desplegamos el menú y seleccionamos la opción ***Raw***.
+Ahora con los datos de la transmisión queremos tenerlos tal cual han sido enviados, sin formato, es decir, en crudo. Para ello desde esta ventana en la opcion ***"Mostrar datos como"*** desplegamos el menú y seleccionamos la opción ***Raw***.
 
-Una vez hecho esto, solo queda guardar el fichero mediante la opción ***"Guardar como"*** y añadirle la extensión *.zip*. Una vez hecho esto, solo queda extraer el contenido de dicho fichero mediante:
+Una vez hecho esto, solo queda guardar el fichero mediante la opción ***"Guardar como"*** y añadirle la extensión *.zip*. Ahora, extraemos el contenido de dicho fichero mediante:
 
 >     $ unzip <ruta/nombreFichero>
 
-Después simplemente quedaría hacer un cat a la flag.
+Después con un simple cat accedemos a la flag.
 
 >     $ cat flag.txt  
 >     SUGUS{P3oP1e_7hE_W3ak357_L1nK}
 
-Esto nos ha devuelto ya la flag en su formato correcto.
+Se puede ver ya la flag en su formato correcto.
 
 > ***SUGUS{P3oP1e_7hE_W3ak357_L1nK}***
