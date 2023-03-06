@@ -74,7 +74,7 @@ Esto abrirá una ventana donde podremos observar mas claramente el intercambio d
 >     ...
 >     ...
 
-Podemos ver en este snippet de la captura observamos que despues de logearse, comprime un archivo llamado flag.txt en un ZIP y lo protege con una contraseña, pero, debido a que ***Telnet*** no cifra el paso de mensajes, somos capaces de leer la contraseña con la que se ha comprimido dicho fichero ZIP.
+Podemos ver en este snippet de la captura, que despues de logearse, comprime un archivo llamado flag.txt en un ZIP y lo protege con una contraseña, pero, debido a que ***Telnet*** no cifra el paso de mensajes, somos capaces de leer la contraseña con la que se ha comprimido dicho fichero ZIP.
 
 > ***CTFSUGUS2023***
 
